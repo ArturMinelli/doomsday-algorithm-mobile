@@ -1,9 +1,9 @@
-import { Text } from "native-base";
+import { Text, VStack } from "native-base";
 
 export function Trainer() {
   return (
-    <Text color='amber.200'>
-      Trainer
-    </Text>
+    <VStack flex={1} bgColor="gray.600">
+
+    </VStack>
   )
 }

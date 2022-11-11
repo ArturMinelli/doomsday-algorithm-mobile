@@ -1,13 +1,16 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { PlusCircle, SoccerBall, Timer } from 'phosphor-react-native'
+import { Timer } from 'phosphor-react-native'
+import { LinearGradient } from 'expo-linear-gradient'
 import { useTheme } from 'native-base'
 import { Platform } from 'react-native'
 import { Trainer } from '../screens/Trainer'
+import * as NavigationBar from 'expo-navigation-bar';
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
 export function AppRoutes() {
   const { colors, sizes } = useTheme()
+  NavigationBar.setBackgroundColorAsync(colors.gray[700])
 
   const iconsSize = sizes[6]
 
@@ -15,15 +18,24 @@ export function AppRoutes() {
     <Navigator
       screenOptions={{
         headerShown: false,
-        tabBarLabelPosition: 'beside-icon',
-        tabBarActiveTintColor: colors.yellow[500],
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: colors.green[500],
         tabBarInactiveTintColor: colors.gray[300],
         tabBarStyle: {
           position: 'absolute',
-          height: sizes[22],
+          height: sizes[14],
           borderTopWidth: 0,
-          backgroundColor: colors.gray[800],
         },
+        tabBarBackground: () => (
+          <LinearGradient
+            style={{
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+            }}
+            colors={[colors.gray[600], colors.gray[700]]}
+          />
+        ),
         tabBarItemStyle: {
           position: 'relative',
           top: Platform.OS === 'android' ? -10 : 0
@@ -34,7 +46,6 @@ export function AppRoutes() {
         name='trainer'
         component={Trainer}
         options={{
-          tabBarLabel: "Novo bolão",
           tabBarIcon: ({ color }) => (
             <Timer color={color} size={iconsSize}/>
           )
