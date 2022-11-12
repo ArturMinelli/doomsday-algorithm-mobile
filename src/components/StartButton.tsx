@@ -1,0 +1,28 @@
+import { Button, Text, useTheme } from 'native-base'
+
+export function StartButton() {
+  const { colors, sizes } = useTheme()
+
+  return (
+    <Button
+      width='75%'
+      marginTop={84}
+      padding={4}
+      borderRadius={99999}
+      borderWidth={4}
+      borderColor={colors.green[500]}
+      bgColor={colors.gray[700]}
+      _pressed={{
+        opacity: 0.9,
+      }}
+    >
+    <Text
+      color={colors.gray[100]}
+      fontSize={sizes[12]}
+      fontWeight="extrabold"
+    >
+      Start
+    </Text>
+  </Button>
+  )
+}
