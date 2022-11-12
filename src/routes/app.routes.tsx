@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Timer } from 'phosphor-react-native'
+import { ListBullets, Timer } from 'phosphor-react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useTheme } from 'native-base'
 import { Platform } from 'react-native'
 import { Trainer } from '../screens/Trainer'
+import { History } from '../screens/History'
 import * as NavigationBar from 'expo-navigation-bar';
 
 const { Navigator, Screen } = createBottomTabNavigator()
@@ -48,6 +49,15 @@ export function AppRoutes() {
         options={{
           tabBarIcon: ({ color }) => (
             <Timer color={color} size={iconsSize}/>
+          )
+        }}
+      />
+      <Screen
+        name='history'
+        component={History}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <ListBullets color={color} size={iconsSize}/>
           )
         }}
       />

@@ -3,17 +3,15 @@ import { StartButton } from "../components/StartButton";
 import { WeekdayButton } from "../components/WeekdayButton";
 
 export function Trainer() {
-  const { colors, sizes } = useTheme()
-
   return (
     <VStack flex={1} alignItems="center" bgColor="gray.600">
       <StartButton />
 
       <Text
         paddingTop={6}
-        fontSize={sizes[5]}
+        fontSize={20}
         fontWeight='bold'
-        color={colors.green[500]}
+        color="green.500"
       >
         January 14th, 2017
       </Text>
