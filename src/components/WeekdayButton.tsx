@@ -13,8 +13,7 @@ export function WeekdayButton({ weekday, ...props }: WeekdayButtonProps) {
   return (
     <Button
       {...props}
-      minWidth={32}
-      padding={12}
+      width="38"
       paddingTop={4}
       paddingBottom={4}
       borderRadius={10}

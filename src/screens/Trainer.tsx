@@ -1,18 +1,21 @@
 import { Text, VStack, useTheme, HStack } from "native-base";
 import { StartButton } from "../components/StartButton";
+import { Timer } from "../components/Timer";
 import { WeekdayButton } from "../components/WeekdayButton";
 import { useCycles } from "../hooks/useCycles";
 
 export function Trainer() {
   const { activeCycle, passedMilliseconds, createNewCycle } = useCycles()
 
-  console.log(passedMilliseconds)
-
   return (
     <VStack flex={1} alignItems="center" bgColor="gray.600">
-      <StartButton
-        onPress={createNewCycle}
-      />
+      {!!activeCycle ? (
+        <Timer />
+      ) : (
+        <StartButton
+          onPress={createNewCycle}
+        />
+      )}
 
       <Text>
         {passedMilliseconds}
@@ -43,8 +46,8 @@ export function Trainer() {
         justifyContent="space-between"
         marginTop="0.5"
       >
-        <WeekdayButton weekday="Sunday"/>
-        <WeekdayButton weekday="Monday"/>
+        <WeekdayButton weekday="Tuesday"/>
+        <WeekdayButton weekday="Wednesday"/>
       </HStack>
 
       <HStack
@@ -53,8 +56,8 @@ export function Trainer() {
         justifyContent="space-between"
         marginTop="0.5"
       >
-        <WeekdayButton weekday="Sunday"/>
-        <WeekdayButton weekday="Monday"/>
+        <WeekdayButton weekday="Thursday"/>
+        <WeekdayButton weekday="Friday"/>
       </HStack>
 
       <HStack
@@ -63,7 +66,7 @@ export function Trainer() {
         justifyContent="space-between"
         marginTop="0.5"
       >
-        <WeekdayButton weekday="Monday"/>
+        <WeekdayButton weekday="Saturday"/>
       </HStack>
 
     </VStack>
