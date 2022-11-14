@@ -1,11 +1,22 @@
 import { Text, VStack, useTheme, HStack } from "native-base";
 import { StartButton } from "../components/StartButton";
 import { WeekdayButton } from "../components/WeekdayButton";
+import { useCycles } from "../hooks/useCycles";
 
 export function Trainer() {
+  const { activeCycle, passedMilliseconds, createNewCycle } = useCycles()
+
+  console.log(passedMilliseconds)
+
   return (
     <VStack flex={1} alignItems="center" bgColor="gray.600">
-      <StartButton />
+      <StartButton
+        onPress={createNewCycle}
+      />
+
+      <Text>
+        {passedMilliseconds}
+      </Text>
 
       <Text
         paddingTop={6}

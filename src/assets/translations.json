@@ -1,0 +1,34 @@
+{
+  "en-US": {
+    "start": "Start",
+    "history": "History",
+    "success": "You got it!",
+    "error": "You failed!",
+    "noCyclesText": "There haven't been any cycles yet!",
+    "weekdays": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+   }
+  },
+  "pt-BR": {
+    "start": "Começar",
+    "history": "Histórico",
+    "success": "Você acertou!",
+    "error": "Resposta errada!",
+    "noCyclesText": "Você ainda não tem nenhum ciclo!",
+    "weekdays": {
+      "sunday": "Domingo",
+      "monday": "Segunda",
+      "tuesday": "Terça",
+      "wednesday": "Quarta",
+      "thursday": "Quinta",
+      "friday": "Sexta",
+      "saturday": "Sábado"
+   }
+  }
+}

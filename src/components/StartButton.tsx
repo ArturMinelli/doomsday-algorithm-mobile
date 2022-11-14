@@ -1,10 +1,11 @@
-import { Button, Text, useTheme } from 'native-base'
+import { Button, Text, useTheme, IButtonProps } from 'native-base'
 
-export function StartButton() {
+export function StartButton(props: IButtonProps) {
   const { colors, sizes } = useTheme()
 
   return (
     <Button
+      {...props}
       width='75%'
       marginTop={84}
       padding={4}
