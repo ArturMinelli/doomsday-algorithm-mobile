@@ -54,7 +54,7 @@ export function History() {
             {formatDate(item.randomDate, language.locale)}
           </Text>
           <Text
-            color="green.300"
+            color={item.userGuess === item.weekday.day ? "green.300" : "red.500"}
             fontWeight="bold"
           >
             {language.t(`weekdays.${weekdaysInfo[item.userGuess]}`)}

@@ -15,7 +15,7 @@ export function Timer() {
         interval = window.setInterval(() => {
         const currentDifferenceInMilliseconds = differenceInMilliseconds(new Date(), new Date(activeCycle.startDate))
         updateMilliseconds(currentDifferenceInMilliseconds)
-      }, 5)
+      }, 1)
     }
 
     return () => {
